@@ -1,0 +1,93 @@
+<div class="flex justify-center items-center h-screen">
+  <div class="container mx-auto">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-200 p-4">
+      <div class="header text-xl mb-4">Ajouter une règle à votre tâche</div>
+
+      <input type="text" id="ruleName" name="ruleName" [(ngModel)]="Rule.ruleName" required placeholder="Nom de règle" class="mb-4">
+      <input type="text" id="description" name="description" [(ngModel)]="Rule.description" required placeholder="Description de règle" class="mb-4">
+
+      <form action="/submit" method="post" class="adjust">
+        <div class="grid-box3">
+          <label>Détails de la règle</label>
+          <div class="box">
+            <div class="flex mr-6">
+              <label for="selectObject"  >Type d'objet :</label>
+              <select id="selectObject" [(ngModel)]="selectedObjectType" (change)="onObjectTypeChange($event)" [ngModelOptions]="{standalone: true}">
+                <option value="Operateur">Opérateur</option>
+                <option value="Const">Constante</option>
+                <option value="Var">Variable</option>
+              </select>
+            </div>
+           
+              
+          <div *ngIf="selectedObjectType ==='Const'">
+            <div>
+              <input type="text" id="objetName" name="objetName" [(ngModel)]="ObjectDto.objetName" required placeholder="Nom d'objet">
+            </div>
+            <div>
+              <input type="text" id="orderObject" name="orderObject" [(ngModel)]="ObjectDto.orderObject" required placeholder="Ordre d'objet">
+            </div>
+            <div>
+              <input type="text" id="objetContent" name="objetContent" [(ngModel)]="ObjectDto.objetContent" required placeholder="Contenu">
+            </div>
+          </div>
+              
+            <div *ngIf="selectedObjectType ==='Var'">
+              <div>
+                <input type="text" id="objetName" name="objetName" [(ngModel)]="ObjectDto.objetName" required placeholder="Nom d'objet">
+              </div>
+              <div>
+                <input type="text" id="orderObject" name="orderObject" [(ngModel)]="ObjectDto.orderObject" required placeholder="Ordre d'objet">
+              </div>
+              <div>
+                <input type="text" id="objetContent" name="objetContent" [(ngModel)]="ObjectDto.objetContent" required placeholder="URl de variable">
+
+              </div>
+              <div><button class="addFormula" (click)="AddObjet()">Enregistrer l'objet</button></div>
+
+              <div class="button-container">
+
+                <button class="addFormula" (click)="onAddFormulaClick()">Ajouter une paramétre</button>
+   
+              </div>
+            </div>
+
+              <!-- TODO : nom, contenue, ordre -->
+              <div *ngIf="showFormulaInputs">
+                <input type="text" id="parameterName" name="parameterName" [(ngModel)]="ParamDto.parameterName" required placeholder="Nom de paramètre">
+                <input type="text" id="parameterContent" name="parameterContent" [(ngModel)]="ParamDto.parameterContent" required placeholder="Contenu">
+                <input type="text" id="parameterRank" name="parameterRank" [(ngModel)]="ParamDto.parameterRank" required placeholder="ordre">
+  
+                  <button class="align" type="submit" (click)="AddParam()">Enregistrer Parametre</button>
+              </div>
+
+             <div *ngIf="selectedObjectType === 'Operateur'">
+              <div>
+                <input type="text" id="orderObject" name="orderObject" [(ngModel)]="ObjectDto.orderObject" required placeholder="Ordre d'objet">
+              </div>
+              <select id="objetContent" [(ngModel)]="ObjectDto.objetContent">
+                <option value=">">></option>
+                <option value="<"><</option>
+                <option value="==">=</option>
+              </select>
+             </div>
+            
+          
+            
+          </div>
+        </div>
+      </form>
+      <div class="button-container">
+        <button class="addObject" (click)="AddObjectClick()">Ajouter un objet</button>
+      </div>
+  
+      <div>
+        <button class="align" ><a (click)="addRule()" >Enregistrer</a></button>
+        <button class="align"><a>Annuler</a></button>
+      </div>
+    
+  
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,27 @@
+.sidebar {
+    width: 220px;
+    background: radial-gradient(circle at 0% 0%, #72a5e8, #f6f4f8);
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #fff;
+    
+  }
+  .sidebar a:hover {
+    color: #ffcc00; /* Couleur au survol */
+  }
+  
