@@ -1,15 +1,14 @@
 export class ObjectDto {
-  objetId :any
-  objetName: string = '';
-  objetType: any;
-  objetAction: string = '';
-  objetContent: string = '';
+  id :any
+  name: string = '';
+  type: any;
+  content: string = '';
   creationDate: any;
-  orderObject : any;
+  
 
-  constructor( objetType: any, ) {
+  constructor( selectedObjectType: any ) {
 
-    this.objetType = objetType;
+    this.type = selectedObjectType;
 
   }
 

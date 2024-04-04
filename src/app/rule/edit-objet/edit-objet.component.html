@@ -1,0 +1,16 @@
+<div class="dialog-container">
+    <div class="dialog-content">
+      <h2 class="dialog-title">Modifier Objet</h2>
+      <div class="input-field">
+        <input type="text" id="name" name="name" [(ngModel)]="newObjet.name" required placeholder="Nom d'objet">
+      </div>
+      <div class="input-field">
+        <input type="text" id="content" name="content" [(ngModel)]="newObjet.content" required placeholder="Contenu">
+      </div>
+      <div class="buttons-container">
+        <button class="save-button" mat-button (click)="onSaveClick()">Enregistrer</button>
+        <button class="cancel-button" mat-button (click)="onCancelClick()">Annuler</button>
+      </div>
+    </div>
+  </div>
+  

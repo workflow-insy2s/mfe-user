@@ -5,6 +5,7 @@ import { ObjectDto } from './models/object-dto';
 import { ParamDto } from './models/param-dto';
 import { RuleDto } from './models/rule-dto';
 import { HttpClient } from '@angular/common/http';
+import { Rule } from './models/Rule';
 
 @Injectable({
   providedIn: 'root'
@@ -79,12 +80,32 @@ export class ServiceService {
     return this.http.post(this.url1+'/objets',object) 
    }
 
-   addParam (param:ParamDto){
+/*    addParam (param:ParamDto){
     return this.http.post(this.url1+'/parameters',param) 
-   }
+   } */
 
    addRuleObjet (relation:RuleObjetDto){
     return this.http.post(this.url1+'/relations',relation) 
+   }
+
+   //Parameter
+   addParameter (param:ParamDto){
+    return this.http.post(this.url1+'/parameters',param) 
+   }
+   
+   //Add Rule With Objects 
+   
+   addRuleWithObjects (rule:Rule){
+    return this.http.post(this.url1+'/rules/addWithObjects',rule) 
+   }
+
+   deleteObjet (ObjetId: any ){
+    return this.http.delete(this.url1+'/objets/'+ObjetId)
+  }
+
+  //EDit Object
+  editObject(object:ObjectDto , objtId:any ){
+    return this.http.put(this.url1+'/objets/'+objtId,object) 
    }
 
 

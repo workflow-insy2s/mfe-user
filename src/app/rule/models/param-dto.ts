@@ -1,14 +1,17 @@
+import { ObjectDto } from "./object-dto";
 export class ParamDto {
-  parameterId :any;
-  parameterName: string = '';
-  parameterContent: string ='';
-  parameterRank : any;
-  objectId : any;
-  obj : any;
-  constructor( objectId: any ) {
+  name: string;
+  content: string;
+  rank: any;
+  objet: {
+    id: any;
+  };
 
-    this.objectId = objectId;
-
+  constructor(name: string, content: string, rank: any, objetId: any) {
+    this.name = name;
+    this.content = content;
+    this.rank = rank;
+    this.objet = { id: objetId };
   }
   }
 

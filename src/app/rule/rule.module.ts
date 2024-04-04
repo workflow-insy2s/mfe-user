@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RuleRoutingModule } from './rule-routing.module';
 import { ServiceService } from './service.service';
+import { EditObjetComponent } from './edit-objet/edit-objet.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditParameterComponent } from './edit-parameter/edit-parameter.component';
 
 
 
@@ -19,6 +22,8 @@ import { ServiceService } from './service.service';
     HeaderComponent,
     AddRuleComponent,
     ListRuleComponent,
+    EditObjetComponent,
+    EditParameterComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +32,9 @@ import { ServiceService } from './service.service';
     HttpClientModule, 
     ReactiveFormsModule,
     RuleRoutingModule,
+    MatDialogModule,
+    MatDialogModule,
+
 
   ],
   exports:[
