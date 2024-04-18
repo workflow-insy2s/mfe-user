@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-import { WorkflowDto } from './models/workflow-dto';
-import { RuleObjetDto } from './models/RuleObjet-dto';
-import { ObjectDto } from './models/object-dto';
-import { ParamDto } from './models/param-dto';
-import { RuleDto } from './models/rule-dto';
 import { HttpClient } from '@angular/common/http';
-import { Rule } from './models/Rule';
+import { Role } from './models/role';
+import { User } from './models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,101 +9,50 @@ import { Rule } from './models/Rule';
 export class ServiceService {
 
   constructor(private http : HttpClient) { }
-  url='http://localhost:7080/api/v1/workflows'
+//APIRole
+url='http://localhost:8082/api/keycloak'
+
+addRole (role:Role){
+  return this.http.post(this.url+'/roles/',role) 
+ }
+
+ getAllRoles(){
+  return this.http.get(this.url+'/roles/')
+
+ }
+
+ deleteRole (roleId: any ){
+  return this.http.delete(this.url+'/roles/'+roleId)
+}
+
+editRole(role:Role , roleId:any ){
+  return this.http.post(this.url+'/roles/'+roleId+'/update',role) 
+ }
 
 
+//APIs User
 
 
-  
-   
-  addWorkflow (workflow:WorkflowDto){
-    return this.http.post(this.url,workflow) 
-   }
+addUser (user:User){
+  return this.http.post(this.url+'/users/create',user) 
+ }
+
+ getAllUsers(){
+  return this.http.get(this.url+'/users/')
+
+ }
+
+ deleteUser (userId: any ){
+  return this.http.delete(this.url+'/users/'+userId)
+}
+
+editUser(user:User){
+  return this.http.post(this.url+'/users/update',user) 
+ }
 
 
-  getWorkflows(){
-    return this.http.get(this.url)
-  
-   }
-
-   removeWorkflow (workflowId: any ){
-    return this.http.delete(this.url+'/'+workflowId)
-  }
-
-
-
-  editworkflow(workflow:WorkflowDto , workflowId:any ){
-    return this.http.put(this.url+'/'+workflowId,workflow) 
-   }
-
-
-   getWorkflowById(workflowId:any){
-    return this.http.get(this.url+'/'+workflowId)
-  }
-
-  //service Rule 
-  url1='http://localhost:7080/api/v1'
-
-  
-
-
-  addRule (rule:RuleDto){
-    return this.http.post(this.url1+'/rules',rule) 
-   }
-
-  getRuls(stepEntry: any){
-    return this.http.get(this.url1+'/rules/stepEntry/'+stepEntry)
-  
-   }
-
-   removeRule (ruleId: any ){
-    return this.http.delete(this.url1+'/rules/'+ruleId)
-  }
-
-
-
-  editRule(rule:RuleDto , ruleId:any ){
-    return this.http.put(this.url1+'/'+ruleId,rule) 
-   }
-
-
-   getRuleById(ruleId:any){
-    return this.http.get(this.url1+'/'+ruleId)
-  }
-
-  //pour l'objet
-  addObjet (object:ObjectDto){
-    return this.http.post(this.url1+'/objets',object) 
-   }
-
-/*    addParam (param:ParamDto){
-    return this.http.post(this.url1+'/parameters',param) 
-   } */
-
-   addRuleObjet (relation:RuleObjetDto){
-    return this.http.post(this.url1+'/relations',relation) 
-   }
-
-   //Parameter
-   addParameter (param:ParamDto){
-    return this.http.post(this.url1+'/parameters',param) 
-   }
-   
-   //Add Rule With Objects 
-   
-   addRuleWithObjects (rule:Rule){
-    return this.http.post(this.url1+'/rules/addWithObjects',rule) 
-   }
-
-   deleteObjet (ObjetId: any ){
-    return this.http.delete(this.url1+'/objets/'+ObjetId)
-  }
-
-  //EDit Object
-  editObject(object:ObjectDto , objtId:any ){
-    return this.http.put(this.url1+'/objets/'+objtId,object) 
-   }
-
-
+ getRoleById(userId:any){
+  return this.http.get(this.url+'/'+userId)
+}
 }
 

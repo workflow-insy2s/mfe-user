@@ -73,7 +73,7 @@
   }
   
   .buttons-container button.cancel-button {
-    background-color: #f44336;
+    background-color: #bdb7b6;
     color: #fff;
   }
   .input-field {
@@ -107,8 +107,35 @@
   }
   
   .buttons-container button.cancel-button {
-    background-color: #f44336;
+    background-color: #bdb7b6;
     color: #fff;
   }
+  .user-list {
+    margin: 20px;
+  }
+  
+  .user-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .user-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-list th, .user-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .user-list th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+
+  
+
   
   

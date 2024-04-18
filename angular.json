@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"mfe-rule": {
+		"mfe-user": {
 			"projectType": "application",
 			"schematics": {},
 			"root": "",
@@ -13,7 +13,7 @@
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
-						"outputPath": "dist/mfe-rule",
+						"outputPath": "dist/mfe-user",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": [
@@ -63,24 +63,24 @@
 					"builder": "ngx-build-plus:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "mfe-rule:build:production",
+							"browserTarget": "mfe-user:build:production",
 							"extraWebpackConfig": "webpack.prod.config.js"
 						},
 						"development": {
-							"browserTarget": "mfe-rule:build:development"
+							"browserTarget": "mfe-user:build:development"
 						}
 					},
 					"defaultConfiguration": "development",
 					"options": {
-						"port": 4002,
-						"publicHost": "http://localhost:4002",
+						"port": 4004,
+						"publicHost": "http://localhost:4004",
 						"extraWebpackConfig": "webpack.config.js"
 					}
 				},
 				"extract-i18n": {
 					"builder": "ngx-build-plus:extract-i18n",
 					"options": {
-						"browserTarget": "mfe-rule:build",
+						"browserTarget": "mfe-user:build",
 						"extraWebpackConfig": "webpack.config.js"
 					}
 				},

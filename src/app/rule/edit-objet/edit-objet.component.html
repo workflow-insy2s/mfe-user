@@ -1,16 +1,46 @@
 <div class="dialog-container">
-    <div class="dialog-content">
-      <h2 class="dialog-title">Modifier Objet</h2>
-      <div class="input-field">
-        <input type="text" id="name" name="name" [(ngModel)]="newObjet.name" required placeholder="Nom d'objet">
-      </div>
-      <div class="input-field">
-        <input type="text" id="content" name="content" [(ngModel)]="newObjet.content" required placeholder="Contenu">
-      </div>
-      <div class="buttons-container">
-        <button class="save-button" mat-button (click)="onSaveClick()">Enregistrer</button>
-        <button class="cancel-button" mat-button (click)="onCancelClick()">Annuler</button>
-      </div>
+  <div class="dialog-content">
+    <h2 class="dialog-title">Modifier utilisateur</h2>
+    <div class="input-field">
+      <input type="text" id="username" name="username" [(ngModel)]="newUser.username" required placeholder="Nom d'utilisateur :">
+    </div>
+    <div class="input-field">
+      <input type="text" id="email" name="email" [(ngModel)]="newUser.email" required placeholder="Email :">
+    </div>
+
+    <div class="input-field">
+      <input type="password" id="password" name="password" [(ngModel)]="newUser.password" required placeholder="Mot de passe :">
+    </div>
+
+    <div class="input-field">
+      <input type="password" id="password" name="password" [(ngModel)]="newUser.password" required placeholder="Confirmer le mot de passe :">
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="input-field">
+      <input type="text" id="firstname" name="firstname" [(ngModel)]="newUser.firstname" required placeholder="Nom :">
+    </div>
+    <div class="input-field">
+      <input type="text" id="lastname" name="lastname" [(ngModel)]="newUser.lastname" required placeholder="Prénom :">
+    </div>
+
+    <div class="input-field">
+      <label for="role">Rôle :</label>
+      <select id="roles" name="roles" [(ngModel)]="newUser.roles.id" required>
+        <option value="ROLE_USER">Utilisateur</option>
+        <option value="ROLE_ADMIN">Administrateur</option>
+      </select>
+    </div>
+    <div class="buttons-container">
+      <button class="save-button" mat-button (click)="onSaveClick()">Enregistrer</button>
+      <button class="cancel-button" mat-button (click)="onCancelClick()">Annuler</button>
     </div>
   </div>
-  
+</div>

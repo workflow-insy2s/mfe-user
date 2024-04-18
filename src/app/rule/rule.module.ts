@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { HeaderComponent } from './header/header.component';
-import { AddRuleComponent } from './addRule/add-rule.component';
-import { ListRuleComponent } from './list-rule/list-rule.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -12,18 +8,24 @@ import { ServiceService } from './service.service';
 import { EditObjetComponent } from './edit-objet/edit-objet.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditParameterComponent } from './edit-parameter/edit-parameter.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { AddRoleComponent } from './add-role/add-role.component';
+import { RoleListComponent } from './role-list/role-list.component';
+import { RoleUserComponent } from './role-user/role-user.component';
 
 
 
 
 @NgModule({
   declarations: [
-    SidebarComponent,
-    HeaderComponent,
-    AddRuleComponent,
-    ListRuleComponent,
     EditObjetComponent,
     EditParameterComponent,
+    AddUserComponent,
+    UserListComponent,
+    AddRoleComponent,
+    RoleListComponent,
+    RoleUserComponent,
   ],
   imports: [
     CommonModule,
@@ -38,10 +40,7 @@ import { EditParameterComponent } from './edit-parameter/edit-parameter.componen
 
   ],
   exports:[
-    SidebarComponent,
-    HeaderComponent,
-    AddRuleComponent,
-    ListRuleComponent
+    
   ],
   providers:[ServiceService]
 })

@@ -2,7 +2,7 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  name: 'mfe-rule',
+  name: 'mfe-user',
 
   exposes: {
    // './Component': './src/app/app.component.ts',

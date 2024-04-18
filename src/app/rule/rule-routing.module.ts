@@ -1,28 +1,39 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AddRuleComponent } from './addRule/add-rule.component';
 import { RuleComponent } from './rule.component';
-import { ListRuleComponent } from './list-rule/list-rule.component';
-
-
+import { AddRoleComponent } from './add-role/add-role.component';
+import { RoleListComponent } from './role-list/role-list.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UserListComponent } from './user-list/user-list.component';
 const ruleRoutes: Routes = [
 
 
-  { path: '', redirectTo: 'ruleComponent/addRuleComponent', pathMatch: 'full' },
+  { path: '', redirectTo: 'homeComponent/addUserComponent', pathMatch: 'full' },
 
     {
-        path: 'ruleComponent',
+        path: 'homeComponent',
         component: RuleComponent,
         children:[
+
           {
-            path: "addRuleComponent",
-            component: AddRuleComponent
+            path:"addrolecomponent",
+            component: AddRoleComponent
           },
           {
-            path: 'listRuleComponent',
-            component: ListRuleComponent
+            path:"roleListComponent",
+            component: RoleListComponent
           },
+          {
+            path:"addUserComponent",
+            component: AddUserComponent
+
+          },
+          {
+            path:"userListComponent",
+            component: UserListComponent
+          },
+          
           
         ]}
 ];

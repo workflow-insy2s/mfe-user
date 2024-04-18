@@ -1,0 +1,18 @@
+<div class="add-user-form">
+    <h2>Ajouter un nouvel rôle</h2>
+    <form>
+        <div class="form-group">
+            <label for="username">Nom :</label>
+            <input type="text" id="name" name="name" [(ngModel)]="role.name" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description :</label>
+            <input type="text" id="description" name="description" [(ngModel)]="role.description" required>
+        </div>
+        
+        <div class="button-group">
+            <button type="button" class="add-button" (click)="addRole()">Ajouter</button>
+            <button type="button" class="cancel-button">Annuler</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,102 @@
+.add-user-form {
+    margin: 70px auto; /* Ajout de la marge en haut et en bas et centrage horizontal */
+    width: 50%; /* Définition de la largeur de l'interface utilisateur */
+}
+
+.add-user-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.add-user-form form {
+    width: 100%; /* Utilisation de la largeur totale du conteneur parent */
+}
+
+.add-user-form .form-group {
+    margin-bottom: 10px;
+}
+
+.add-user-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-user-form input,
+.add-user-form select {
+    width: calc(100% - 20px); /* Utilisation de la largeur totale du conteneur parent avec une petite marge */
+    padding: 8px;
+    border: 1px solid #bab8b8;
+    border-radius: 4px;
+}
+
+.add-user-form .button-group {
+    margin-top: 20px; /* Ajout de l'espace entre les boutons et les champs de formulaire */
+}
+
+.add-user-form .button-group button {
+    width: 49%; /* Définition de la largeur des boutons */
+    padding: 10px; /* Ajout du rembourrage */
+    border: none; /* Suppression de la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur */
+}
+
+.add-user-form .button-group button.add-button {
+    background-color: #4CAF50; /* Couleur de fond du bouton Ajouter */
+    color: white; /* Couleur du texte */
+    margin-right: 3px;
+}
+
+.add-user-form .button-group button.cancel-button {
+    background-color: #f44336; /* Couleur de fond du bouton Annuler */
+    color: white; /* Couleur du texte */
+}
+
+.add-user-form .button-group button:hover {
+    opacity: 0.8; /* Réduction de l'opacité au survol */
+}
+
+
+
+.roles-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .role-checkbox {
+    flex: 0 0 calc(33.33% - 20px); /* Trois colonnes avec un espace de 20px entre chaque élément */
+    margin-right: 20px; /* Espace entre les éléments */
+    margin-bottom: 10px; /* Espacement vertical entre les lignes */
+  }
+  
+  /* Pour s'assurer que chaque élément a une largeur égale */
+  .role-checkbox input,
+  .role-checkbox label {
+    width: calc(100% - 20px); /* Prend toute la largeur avec un espace de 20px */
+  }
+  
+
+
+  .roles-container {
+    border: 1px solid #ccc; /* Ajoute un cadre autour des rôles */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 10px; /* Espace intérieur */
+  }
+  
+  .role-checkbox {
+    flex: 0 0 calc(33.33% - 20px); /* Trois colonnes avec un espace de 20px entre chaque élément */
+    margin-right: 20px; /* Espace entre les éléments */
+    margin-bottom: 10px; /* Espacement vertical entre les lignes */
+    display: flex; /* Utilise Flexbox pour aligner les cases à cocher et les étiquettes */
+    align-items: center; /* Aligne les éléments verticalement */
+  }
+  
+  .role-checkbox input {
+    transform: scale(1.5); /* Réduit la taille des cases à cocher */
+    margin-right: 5px; /* Ajoute un espace entre la case à cocher et le texte */
+  }
+  
+  .role-checkbox label {
+    font-size: 14px; /* Redimensionne le texte */
+  }
+  
