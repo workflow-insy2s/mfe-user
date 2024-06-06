@@ -4,7 +4,6 @@ export class Role {
     description: string;
     status: any;
     checked: any;
-
   
     constructor(id:any, name: string, description: string, status: any) {
       this.id = id;

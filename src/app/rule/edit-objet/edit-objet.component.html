@@ -8,21 +8,6 @@
       <input type="text" id="email" name="email" [(ngModel)]="newUser.email" required placeholder="Email :">
     </div>
 
-    <div class="input-field">
-      <input type="password" id="password" name="password" [(ngModel)]="newUser.password" required placeholder="Mot de passe :">
-    </div>
-
-    <div class="input-field">
-      <input type="password" id="password" name="password" [(ngModel)]="newUser.password" required placeholder="Confirmer le mot de passe :">
-    </div>
-
-
-
-
-
-
-
-
 
     <div class="input-field">
       <input type="text" id="firstname" name="firstname" [(ngModel)]="newUser.firstname" required placeholder="Nom :">
@@ -31,13 +16,22 @@
       <input type="text" id="lastname" name="lastname" [(ngModel)]="newUser.lastname" required placeholder="Prénom :">
     </div>
 
-    <div class="input-field">
-      <label for="role">Rôle :</label>
-      <select id="roles" name="roles" [(ngModel)]="newUser.roles.id" required>
-        <option value="ROLE_USER">Utilisateur</option>
-        <option value="ROLE_ADMIN">Administrateur</option>
-      </select>
+    <div class="form-group">
+      <label for="roles">Rôles :</label>
+    
+      <div class="roles-container">
+        <div class="role-checkbox" *ngFor="let role of roles">
+          <ng-container *ngIf="!role.status">
+            <input type="checkbox" id="{{role.id}}" name="roles" (change)="handleRoleChange($event, role)"
+            [checked]="isRoleSelected(role)">
+            <label for="{{role.id}}">{{role.name}}</label>
+          </ng-container>
+        </div>
+      </div>
     </div>
+
+
+
     <div class="buttons-container">
       <button class="save-button" mat-button (click)="onSaveClick()">Enregistrer</button>
       <button class="cancel-button" mat-button (click)="onCancelClick()">Annuler</button>

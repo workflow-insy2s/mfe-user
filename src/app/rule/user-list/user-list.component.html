@@ -7,45 +7,39 @@
           <th>Email</th>
           <th>Prénom</th>
           <th>Nom</th>
+          <th>Rôles</th>
+
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Ghazi</td>
-          <td>BenYahya@gmail.com</td>
-
-          <td>Ghazi</td>
-
-          <td>Ben Yahya</td>
-
-          
-
-      
-
-          <td>
-            <button class="role" (click)="openRoleUserDialog()" >Role</button>
-            <button >Éditer</button>
-            <button class="delete"  >Supprimer</button>
-            
-          </td>
-        </tr>
         <tr *ngFor="let user of Users">
           <td>{{user.username}}</td>
           <td>{{user.email}}</td>
 
           <td>{{user.lastname}}</td>
 
-          <td>{{user.lastname}}</td>
+          
 
           <td>{{user.firstname}}</td>
+          <td> <h5 *ngFor="let role of user.roles"> {{role.name}}</h5>  </td>
+
+
 
       
 
           <td>
-            <button (click)="openEditObjetDialog(user)">Éditer</button>
-            <button class="delete" (click)="deleteRole(user.id)" >Supprimer</button>
-            <button class="role" (click)="openRoleUserDialog()" >Role</button>
+            <!-- <button class="roler" (click)="openRoleUserDialog(user.roles)" >Role</button> -->
+            <button class="roler" (click)="openEditObjetDialog(user)"  >Éditer</button>
+            
+            <button class="delete" (click)="deleteUser(user.id)" >Supprimer</button>
+
+
+
+
+
+
+
           </td>
         </tr>
       </tbody>

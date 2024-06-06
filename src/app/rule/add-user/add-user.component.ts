@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { User } from '../models/user';
 import { Role } from '../models/role';
+import { TokenService } from '../TokenService';
 
 @Component({
   selector: 'app-add-user',
@@ -12,7 +13,7 @@ import { Role } from '../models/role';
 })
 export class AddUserComponent implements OnInit {
 
-  constructor(private srvRole: ServiceService,private router: Router){}
+  constructor(private srvRole: ServiceService,private router: Router,private tokenService: TokenService){}
   roles: Role[]=[];
   ngOnInit(): void {
     console.log('succes')
@@ -22,6 +23,10 @@ export class AddUserComponent implements OnInit {
       this.roles = res
     
      })
+
+     const token = this.tokenService.getToken();
+     console.log("this is token:",token)
+
   }
 
 

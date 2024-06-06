@@ -43,11 +43,19 @@
     background-color: #d32f2f; /* Rouge foncé au survol */
   }
 
-  .user-list button.role {
+  .user-list button.roler {
     background-color: #2d7af6; /* Rouge */
   }
   
-  .user-list button.role:hover {
+  .user-list button.roler:hover {
     background-color: #2d7af6; /* Rouge foncé au survol */
+  }
+
+  .user-list button.role {
+    background-color: #f6a62d; /* Rouge */
+  }
+  
+  .user-list button.role:hover {
+    background-color: #f6a62d; /* Rouge foncé au survol */
   }
   

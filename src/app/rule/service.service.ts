@@ -54,5 +54,11 @@ editUser(user:User){
  getRoleById(userId:any){
   return this.http.get(this.url+'/'+userId)
 }
+
+activeUser (userId: any ){
+  return this.http.delete(this.url+'/users/toggleUserEnabled/'+userId)
+}
+
+
 }
 

@@ -1,10 +1,14 @@
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #ffffff;
+  color: #0c0c0c;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+  border-bottom: 1px solid #3131f7; /* Ajoute une bordure en bas */
+  font-family: 'Arial', sans-serif; /* Utiliser une police de caractères plus standard */
+
   }
   
   .nav-list {
@@ -23,7 +27,7 @@
   }
   
   .nav-list li a {
-    color: #fff;
+    color: #2916f5;
     text-decoration: none;
     transition: color 0.3s;
     font-size: 18px; /* Taille de la police */
@@ -31,13 +35,10 @@
   }
   
   .nav-list li a:hover {
-    color: #ffcc00;
+    color: #0015ff;
   }
   
-  .logo-container img {
-    width: 70px;
-    height: 60px;
-  }
+
   
 
 
@@ -58,13 +59,10 @@
   
   .nav-list li a {
     text-decoration: none; /* Supprime la décoration de texte des liens */
-    color: #f1f1f1; /* Couleur du texte des liens */
+    color: #080808; /* Couleur du texte des liens */
     padding: 15px 15px; /* Ajoute un espacement interne aux liens */
-    border: 0.5px solid #ccc; /* Ajoute une bordure aux liens */
     border-radius: 5px; /* Arrondit les coins des liens */
   }
   
-  .nav-list li a:hover {
-    background-color: #424141; /* Change la couleur de fond des liens au survol */
-  }
+
   
